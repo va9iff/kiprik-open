@@ -42,7 +42,7 @@ export const saveProject = async () => {
     showGallery()
 }
 
-import { setTrackFileName } from "./play.js";
+import { setTrackFileName, trackAudio } from "./play.js";
 
 async function playMP3FromDirectory(dirHandle, fileName) {
     // Get the file handle from the directory

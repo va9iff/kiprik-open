@@ -40,7 +40,7 @@ import { icon } from "./builtens.js"
 import { Dirv } from "./dirv.js"
 import { resizeDotFor } from "./edit.js"
 
-const trackAudio = /** @type HTMLAudioElement */
+export const trackAudio = /** @type HTMLAudioElement */
     (document.querySelector("audio.trackAudio"))
 
 export let activeRecord = /** @type any */ (null)
@@ -59,6 +59,7 @@ let trackFileName = "vo.mp3"
 export const setTrackFileName = (/** @type string */ generatedUrl) => {
     console.log(generatedUrl)
     trackFileName = generatedUrl 
+    trackAudio.src = trackFileName
 }
 
 const slideTimeouts = []
@@ -87,7 +88,8 @@ export const playButton = button(
         go(fromSlide)
         slideTimeouts.length = 0
         let accumilatedTime = 0
-        trackAudio.src = trackFileName
+        //trackAudio.src = trackFileName
+        // do it in setTrackFileName
         let playFrom = (records?.slides[fromSlide]?.duration ?? 0) / 1000
         trackAudio.currentTime = playFrom
         for (const [i, record] of records?.slides.entries() ?? []) {
