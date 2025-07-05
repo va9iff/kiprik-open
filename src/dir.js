@@ -88,7 +88,7 @@ export const loadProject = async () => {
     go(0)
     data[-1] = emptyFrame()
     checkpoint()
-    await setupTrack()
+    await setupTrack(dir)
 }
 
 
