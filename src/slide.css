@@ -1,0 +1,129 @@
+:root {
+    --magic: 450;
+    --r: calc(min(calc(100vw - 400px - 44px), calc((100vh) * 16 / 9 - 300px)) / var(--magic));
+    --slide-width: calc(var(--magic) * var(--r))
+}
+
+.wrapper {
+    position: relative;
+}
+
+.slide {
+    width: var(--slide-width);
+    min-width: var(--slide-width);
+    position: relative;
+    /*background-color: #444;*/
+    background-color: #1d2021;
+    border-radius: calc(7 * var(--r));
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    box-shadow: 10px 8px 13px #11111188;
+}
+
+.backPlate {
+    position: absolute;
+    z-index: 8;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.resizerPlate {
+    position: absolute;
+    z-index: 8;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    /*border: 2px solid blue;*/
+    border: 2px solid transparent;
+    scale: 1;
+    opacity: 1;
+    z-index: 999999;
+}
+
+.resizerPlate.noshow .dot {
+    scale: 0;
+    opacity: 0;
+}
+
+.dot {
+    background-color: #97f;
+    /*width: calc(calc(var(--r) * 0.04));*/
+    /*height: calc(calc(var(--r) * 0.04));*/
+    width: calc(var(--r) * 9);
+    height: calc(var(--r) * 9);
+    cursor: nwse-resize	;
+    /*translate: -50% -50%;*/
+    transition: 
+        /*left 200ms cubic-bezier(0, 1.25, 0.55, 1.35), */
+        /*top 200ms cubic-bezier(0, 1.25, 0.55, 1.35), */
+        left 200ms ease-out,
+        top 200ms ease-out,
+        opacity ease-out 300ms , 
+        scale ease-out 300ms;
+    /*transition-timing-function: ease-out;*/
+    border-radius: 50%;
+    position: absolute;
+    /*left: calc(calc(var(--r) * 0.4));*/
+    /*top: calc(calc(var(--r) * 0.4));*/
+}
+
+.rect, .slide img {
+    cursor: grab
+}
+
+.rect:active, .slide img:active {
+    cursor: grabbing;
+    transition: 0ms !important;
+}
+
+
+
+.rect {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    transition: 220ms;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    font-family: sans-serif;
+    /*padding: calc(var(--r) * 9);*/
+
+    /* for active highlight */
+    /*outline: calc(var(--r) * 3) solid #97f;*/
+    /*outline-offset: 6px;*/
+
+    background-color: #922;
+    overflow: hidden;
+    /*padding: calc(0.03 * var(--r));*/
+}
+
+/*.rect:active {*/
+/*    outline: none;*/
+/*    outline-offset: none;*/
+/*}*/
+
+@keyframes scaleIn {
+    from {
+        scale: 0
+    }
+    to {
+        scale: 1
+    }
+}
+.scaleIn {
+    animation: scaleIn 800ms
+}
+
+.slide img {
+    position: absolute;
+    object-fit: cover;
+    user-drag:none;
+    transition: 120ms;
+}
+

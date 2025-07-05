@@ -1,0 +1,9 @@
+{
+  "name": "kiprik",
+  "type": "module",
+  "author": "va9iff",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+  }
+}

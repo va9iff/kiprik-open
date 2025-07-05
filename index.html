@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/slide.css">
+  </head>
+  <body>
+    <div class="main col lw">
+      <div class="row split fill lw">
+        <div class="col cen fill lw">
+          <div class="row cen topside fill">
+            <div class="toprow recrow">
+              <audio src="./lofi.mp3" class="trackAudio" controls></audio>
+              <input type="number" style="width: 60px">of</input>
+              <div class="recordDur">~</div>
+              <button class="recordEndBtn btn">end</button>
+            </div>
+            <div class="toprow homerow">
+              <button class="saveButton btn"></button>
+            </div>
+          </div>
+          <div class="container row cen mid">
+            <div class="wrapper">
+              <div class="backPlate"></div>
+              <div class="resizerPlate">
+                <div class="dot"></div>
+              </div>
+              <div class="slide"></div>
+            </div>
+          </div>
+          <div class="col cen botside fill">
+            <div class="nums">
+              <span class="currentNum">?</span>
+              /
+              <span class="totalNum">?</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="homePanel floatingPanel">
+            <div class="col cen" style="gap: 30px;">
+              Welcome to Kiprik! <br>
+              <button class="continueProjectBtn btn">
+                Continue last
+              </button>
+              <button class="selectBtn btn">
+                Load project
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/index.js" type="module"></script>
+  </body>
+</html>

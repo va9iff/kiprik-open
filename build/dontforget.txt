@@ -1,0 +1,1 @@
+for some reason I load fonts in js. so don't forget to put fonts.css
